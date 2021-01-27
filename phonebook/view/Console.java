@@ -2,23 +2,21 @@ package phonebook.view;
 
 public class Console {
 
-    private static final String START_SEARCHING = "Start searching (%s)...";
+    private static final String START_SEARCHING = "Start searching (%s)...\n";
 
     private static final String FOUND_ENTRIES = "Found %d / %d entries. ";
 
-    private static final String TIME_TAKEN = "Time taken: %d min. %d sec. %d ms.";
+    private static final String TIME_TAKEN = "Time taken: %d min. %d sec. %d ms.\n";
 
-    private static final String SORTING_TIME = "Sorting time: %d min. %d sec. %d ms.";
+    private static final String SORTING_TIME = "Sorting time: %d min. %d sec. %d ms.\n";
 
-    private static final String SEARCHING_TIME = "Searching time: %d min. %d sec. %d ms.";
+    private static final String CREATING_TIME = "Creating time: %d min. %d sec. %d ms.\n";
 
-    private static final String CREATING_TIME = "Creating time: %d min. %d sec. %d ms.";
+    private static final String SEARCHING_TIME = "Searching time: %d min. %d sec. %d ms.\n\r\n";
 
     public void displayMessage(String template, Object... params) {
 
         System.out.printf(template, params);
-
-
 
     }
 
@@ -28,11 +26,9 @@ public class Console {
 
     }
 
-    public void displayFoundEntries(int foundEntries, int entries) {
+    public void displayFoundContacts(int foundContacts, int entries) {
 
-        newLine();
-
-        displayMessage(FOUND_ENTRIES, foundEntries, entries);
+        displayMessage(FOUND_ENTRIES, foundContacts, entries);
 
     }
 
@@ -44,15 +40,11 @@ public class Console {
 
     public void displaySortingTime(int minutes, int seconds, int millis) {
 
-        newLine();
-
         displayMessage(SORTING_TIME, minutes, seconds, millis);
 
     }
 
     public void displayCreatingTime(int minutes, int seconds, int millis) {
-
-        newLine();
 
         displayMessage(CREATING_TIME, minutes, seconds, millis);
 
@@ -60,25 +52,7 @@ public class Console {
 
     public void displaySearchingTime(int minutes, int seconds, int millis) {
 
-        newLine();
-
         displayMessage(SEARCHING_TIME, minutes, seconds, millis);
-
-
-
-    }
-
-    public void displayEmptyLine() {
-
-        newLine();
-
-        System.out.println();
-
-    }
-
-    private void newLine() {
-
-        displayMessage("\n");
 
     }
 

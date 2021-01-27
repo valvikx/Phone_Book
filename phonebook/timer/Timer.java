@@ -1,4 +1,4 @@
-package phonebook.model;
+package phonebook.timer;
 
 import java.time.Duration;
 
@@ -26,7 +26,13 @@ public class Timer {
 
     }
 
-    public void addMillis(long first, long second) {
+    public void setNewDuration(long millis) {
+
+        duration = Duration.ofMillis(millis);
+
+    }
+
+    public void sumMillis(long first, long second) {
 
         duration = Duration.ofMillis(first + second);
 

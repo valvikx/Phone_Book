@@ -1,4 +1,4 @@
-package phonebook.datastruct;
+package phonebook.hashtable;
 
 import java.util.Arrays;
 

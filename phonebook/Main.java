@@ -1,14 +1,14 @@
 package phonebook;
 
-import phonebook.controller.PhoneBook;
+import phonebook.controller.PhoneBookController;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        PhoneBook phoneBook = new PhoneBook();
+        PhoneBookController phoneBookController = new PhoneBookController();
 
-        phoneBook.run();
+        phoneBookController.run();
 
     }
 

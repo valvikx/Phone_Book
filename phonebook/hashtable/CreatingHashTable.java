@@ -1,19 +1,18 @@
-package phonebook.util;
+package phonebook.hashtable;
 
-import phonebook.datastruct.HashTable;
 import phonebook.domain.Contact;
 
 import java.util.List;
 import java.util.function.Function;
 
-public class HashTableCreating {
+public class CreatingHashTable {
 
-    public static <T> HashTable<Contact> create(List<Contact> source,
+    public static <T> HashTable<Contact> create(List<Contact> contacts,
                                                 Function<Contact, T> keyExtractor) {
 
         HashTable<Contact> hashTable = new HashTable<>();
 
-        source.forEach(contact -> {
+        contacts.forEach(contact -> {
 
                                    T key = keyExtractor.apply(contact);
 
