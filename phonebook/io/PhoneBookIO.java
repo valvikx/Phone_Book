@@ -31,14 +31,14 @@ public class PhoneBookIO {
                              // see structure of directory.txt
                              if (Character.isDigit(s.charAt(0))) {
 
-                                 String[] splits = s.split("\\s+", 2);
+                                 String[] tokens = s.split("\\s+", 2);
 
-                                 return new Contact(Integer.parseInt(splits[0]), splits[1]);
+                                 return new Contact(Integer.parseInt(tokens[0]), tokens[1]);
 
                              } else {
 
                                  // see structure of find.txt
-                                 return new Contact(s);
+                                 return new Contact(0, s);
 
                              }
 

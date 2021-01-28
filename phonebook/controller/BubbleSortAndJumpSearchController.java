@@ -9,13 +9,13 @@ import phonebook.view.Console;
 
 import java.util.List;
 
-public class BubbleSortAndJumpSearchProcessingController extends ProcessingController {
+public class BubbleSortAndJumpSearchController extends ProcessingController {
 
-    public BubbleSortAndJumpSearchProcessingController(Console console) {
+    public BubbleSortAndJumpSearchController(Console console) {
 
         super(console, new Searching(new JumpSearching()),
               // The bubble sorting is replaced with java library sorting!!!
-              // The test data from the directory.txt is sorted by the bubble sorting over 10 hours!!!
+              // The bubble sorting of the test data from the directory.txt is over 10 hours!!!
               new Sorting(new StandardSorting()));
 
     }
@@ -25,7 +25,7 @@ public class BubbleSortAndJumpSearchProcessingController extends ProcessingContr
 
         console.displayStartSearching("bubble sort + jump search");
 
-        sortAndSearch(contacts, searchContacts);
+        displayFoundContactsAfterSearching(contacts, searchContacts);
 
     }
 

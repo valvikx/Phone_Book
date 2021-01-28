@@ -11,19 +11,19 @@ import java.util.List;
 
 public abstract class ProcessingController {
 
-    final Timer timer = new Timer();
+    protected final Timer timer = new Timer();
 
-    final Searching searching;
+    protected final Console console;
 
-    final Sorting sorting;
+    protected long sortingMillis;
 
-    final Console console;
+    protected long searchingMillis;
 
-    long sortingMillis;
+    protected final Searching searching;
 
-    long searchingMillis;
+    private final Sorting sorting;
 
-    List<Contact> foundContacts;
+    protected List<Contact> foundContacts;
 
     public ProcessingController(Console console, Searching searching, Sorting sorting) {
 
@@ -37,7 +37,30 @@ public abstract class ProcessingController {
 
     abstract void execute(List<Contact> contacts, List<Contact> searchContacts);
 
-    void search(List<Contact> contacts, List<Contact> searchContacts) {
+    protected void displayFoundContacts(List<Contact> contacts, List<Contact> searchContacts) {
+
+        search(contacts, searchContacts);
+
+        console.displayFoundContacts(foundContacts.size(), searchContacts.size());
+
+    }
+
+    protected void displayFoundContactsAfterSearching(List<Contact> contacts,
+                                                      List<Contact> searchContacts) {
+
+        sort(contacts);
+
+        displayFoundContacts(contacts, searchContacts);
+
+        displayTakenTime();
+
+        displaySortingTime();
+
+        displaySearchingTime();
+
+    }
+
+    private void search(List<Contact> contacts, List<Contact> searchContacts) {
 
         timer.start();
 
@@ -50,7 +73,7 @@ public abstract class ProcessingController {
 
     }
 
-    void sort(List<Contact> contacts) {
+    private void sort(List<Contact> contacts) {
 
         timer.start();
 
@@ -62,21 +85,23 @@ public abstract class ProcessingController {
 
     }
 
-    void sortAndSearch(List<Contact> contacts, List<Contact> searchContacts) {
-
-        sort(contacts);
-
-        search(contacts, searchContacts);
-
-        console.displayFoundContacts(foundContacts.size(), searchContacts.size());
+    private void displayTakenTime() {
 
         timer.sumMillis(sortingMillis, searchingMillis);
 
         console.displayElapsedTime(timer.getMinutes(), timer.getSeconds(), timer.getMillis());
 
+    }
+
+    private void displaySortingTime() {
+
         timer.setNewDuration(sortingMillis);
 
         console.displaySortingTime(timer.getMinutes(), timer.getSeconds(), timer.getMillis());
+
+    }
+
+    protected void displaySearchingTime() {
 
         timer.setNewDuration(searchingMillis);
 

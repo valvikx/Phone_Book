@@ -8,22 +8,22 @@ import phonebook.view.Console;
 
 import java.util.List;
 
-public class HashTableProcessingController extends ProcessingController {
+public class HashTableController extends ProcessingController {
 
-    public HashTableProcessingController(Console console) {
+    public HashTableController(Console console) {
 
         super(console, new Searching(null), null);
 
     }
 
     @Override
-    void execute(List<Contact> contacts, List<Contact> findContacts) {
+    void execute(List<Contact> contacts, List<Contact> searchedContacts) {
 
         console.displayStartSearching("hash table");
 
         timer.start();
 
-        HashTable<Contact> contactsHashTable = CreatingHashTable.create(contacts, Contact::getName);
+        HashTable<Contact> contactsHashTable = CreatingHashTable.create(contacts);
 
         timer.finish();
 
@@ -31,13 +31,13 @@ public class HashTableProcessingController extends ProcessingController {
 
         timer.start();
 
-        List<Contact> searchedContacts = searching.apply(contactsHashTable, findContacts);
+        foundContacts = searching.apply(contactsHashTable, searchedContacts);
 
         timer.finish();
 
         searchingMillis = timer.toMillis();
 
-        console.displayFoundContacts(searchedContacts.size(), findContacts.size());
+        console.displayFoundContacts(foundContacts.size(), searchedContacts.size());
 
         timer.sumMillis(creatingMillis, searchingMillis);
 
@@ -47,9 +47,7 @@ public class HashTableProcessingController extends ProcessingController {
 
         console.displayCreatingTime(timer.getMinutes(), timer.getSeconds(), timer.getMillis());
 
-        timer.setNewDuration(searchingMillis);
-
-        console.displaySearchingTime(timer.getMinutes(), timer.getSeconds(), timer.getMillis());
+        displaySearchingTime();
 
     }
 

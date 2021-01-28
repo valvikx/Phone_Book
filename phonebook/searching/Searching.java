@@ -31,7 +31,7 @@ public class Searching {
 
         return findContacts
                 .stream()
-                .filter(fc -> contacts.get(Math.abs(fc.getName().hashCode())) != null)
+                .filter(fc -> contacts.get(Math.abs(fc.hashCode())) != null)
                 .collect(Collectors.toList());
 
     }

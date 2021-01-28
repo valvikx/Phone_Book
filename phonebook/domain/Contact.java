@@ -1,5 +1,7 @@
 package phonebook.domain;
 
+import java.util.Objects;
+
 public class Contact {
 
     private final int phoneNumber;
@@ -11,14 +13,6 @@ public class Contact {
         this.name = name;
 
         this.phoneNumber = phoneNumber;
-
-    }
-
-    public Contact(String name) {
-
-        this.phoneNumber = -1;
-
-        this.name = name;
 
     }
 
@@ -40,6 +34,26 @@ public class Contact {
                 "phoneNumber=" + phoneNumber +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+
+        if (!(o instanceof Contact)) return false;
+
+        Contact contact = (Contact) o;
+
+        return Objects.equals(name, contact.name);
+
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name);
+
     }
 
 }

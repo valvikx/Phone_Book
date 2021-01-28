@@ -7,9 +7,9 @@ import phonebook.view.Console;
 
 import java.util.List;
 
-public class LinearSearchProcessingController extends ProcessingController {
+public class LinearSearchController extends ProcessingController {
 
-    public LinearSearchProcessingController(Console console) {
+    public LinearSearchController(Console console) {
 
         super(console, new Searching(new LinearSearching()), null);
 
@@ -20,13 +20,9 @@ public class LinearSearchProcessingController extends ProcessingController {
 
         console.displayStartSearching("linear search");
 
-        search(contacts, searchContacts);
+        displayFoundContacts(contacts, searchContacts);
 
-        console.displayFoundContacts(foundContacts.size(), searchContacts.size());
-
-        console.displayElapsedTime(timer.getMinutes(), timer.getSeconds(), timer.getMillis());
-
-        console.displayMessage("\n");
+        displaySearchingTime();
 
     }
 

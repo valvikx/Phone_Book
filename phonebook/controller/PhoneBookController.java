@@ -28,13 +28,13 @@ public class PhoneBookController {
 
             List<Contact> searchContacts = phoneBookIO.getData(FIND_PATH);
 
-            new LinearSearchProcessingController(console).execute(contacts, searchContacts);
+            new LinearSearchController(console).execute(contacts, searchContacts);
 
-            new BubbleSortAndJumpSearchProcessingController(console).execute(new ArrayList<>(contacts), searchContacts);
+            new BubbleSortAndJumpSearchController(console).execute(new ArrayList<>(contacts), searchContacts);
 
-            new QuickSortAndBinarySearchProcessingController(console).execute(new ArrayList<>(contacts), searchContacts);
+            new QuickSortAndBinarySearchController(console).execute(new ArrayList<>(contacts), searchContacts);
 
-            new HashTableProcessingController(console).execute(contacts, searchContacts);
+            new HashTableController(console).execute(contacts, searchContacts);
 
         } catch (PhoneBookException e) {
 

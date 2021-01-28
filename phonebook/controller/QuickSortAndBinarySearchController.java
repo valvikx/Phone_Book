@@ -9,9 +9,9 @@ import phonebook.view.Console;
 
 import java.util.List;
 
-public class QuickSortAndBinarySearchProcessingController extends ProcessingController {
+public class QuickSortAndBinarySearchController extends ProcessingController {
 
-    public QuickSortAndBinarySearchProcessingController(Console console) {
+    public QuickSortAndBinarySearchController(Console console) {
 
         super(console, new Searching(new BinarySearching()),
               new Sorting(new QuickSorting()));
@@ -23,7 +23,7 @@ public class QuickSortAndBinarySearchProcessingController extends ProcessingCont
 
         console.displayStartSearching("quick sort + binary search");
 
-        sortAndSearch(contacts, searchContacts);
+        displayFoundContactsAfterSearching(contacts, searchContacts);
 
     }
 
