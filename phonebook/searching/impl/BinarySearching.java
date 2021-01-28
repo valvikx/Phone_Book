@@ -9,7 +9,7 @@ import java.util.List;
 public class BinarySearching implements ISearching {
 
     @Override
-    public int search(List<Contact> contacts, Contact contact,
+    public int getIdx(List<Contact> contacts, Contact contact,
                       Comparator<Contact> comparator) {
 
         int left = 0;

@@ -9,14 +9,14 @@ import java.util.List;
 public class JumpSearching implements ISearching {
 
     @Override
-    public int search(List<Contact> contacts, Contact contact,
+    public int getIdx(List<Contact> contacts, Contact contact,
                       Comparator<Contact> comparator) {
 
-        return search(contacts, contact, comparator, 0);
+        return getIdx(contacts, contact, comparator, 0);
 
     }
 
-    private int search(List<Contact> contacts, Contact contact,
+    private int getIdx(List<Contact> contacts, Contact contact,
                        Comparator<Contact> comparator, int startIdx) {
 
         int currentIdx = 0;
@@ -58,7 +58,7 @@ public class JumpSearching implements ISearching {
 
         List<Contact> subContacts = contacts.subList(previousIdx + 1, currentIdx + 1);
 
-        return search(subContacts, contact, comparator, startIdx + previousIdx + 1);
+        return getIdx(subContacts, contact, comparator, startIdx + previousIdx + 1);
 
     }
 

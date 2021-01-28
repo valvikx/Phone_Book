@@ -22,7 +22,7 @@ public class Searching {
 
         return findContacts
                 .stream()
-                .filter(fc -> method.search(contacts, fc, comparator) > -1)
+                .filter(fc -> method.getIdx(contacts, fc, comparator) > -1)
                 .collect(Collectors.toList());
 
     }

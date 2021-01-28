@@ -9,7 +9,7 @@ import java.util.List;
 public class LinearSearching implements ISearching {
 
     @Override
-    public int search(List<Contact> contacts, Contact contact,
+    public int getIdx(List<Contact> contacts, Contact contact,
                       Comparator<Contact> comparator) {
 
         for (int i = 0; i < contacts.size(); i++) {
