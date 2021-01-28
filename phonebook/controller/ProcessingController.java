@@ -35,22 +35,22 @@ public abstract class ProcessingController {
 
     }
 
-    abstract void execute(List<Contact> contacts, List<Contact> searchContacts);
+    abstract void execute(List<Contact> contacts, List<Contact> searchedContacts);
 
-    protected void displayFoundContacts(List<Contact> contacts, List<Contact> searchContacts) {
+    protected void displayFoundContacts(List<Contact> contacts, List<Contact> searchedContacts) {
 
-        search(contacts, searchContacts);
+        search(contacts, searchedContacts);
 
-        console.displayFoundContacts(foundContacts.size(), searchContacts.size());
+        console.displayFoundContacts(foundContacts.size(), searchedContacts.size());
 
     }
 
     protected void displayFoundContactsAfterSearching(List<Contact> contacts,
-                                                      List<Contact> searchContacts) {
+                                                      List<Contact> searchedContacts) {
 
         sort(contacts);
 
-        displayFoundContacts(contacts, searchContacts);
+        displayFoundContacts(contacts, searchedContacts);
 
         displayTakenTime();
 
@@ -60,12 +60,12 @@ public abstract class ProcessingController {
 
     }
 
-    private void search(List<Contact> contacts, List<Contact> searchContacts) {
+    private void search(List<Contact> contacts, List<Contact> searchedContacts) {
 
         timer.start();
 
         foundContacts =
-                searching.apply(contacts, searchContacts, Comparator.comparing(Contact::getName));
+                searching.apply(contacts, searchedContacts, Comparator.comparing(Contact::getName));
 
         timer.finish();
 

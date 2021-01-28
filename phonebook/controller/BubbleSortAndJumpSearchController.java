@@ -21,11 +21,11 @@ public class BubbleSortAndJumpSearchController extends ProcessingController {
     }
 
     @Override
-    void execute(List<Contact> contacts, List<Contact> searchContacts) {
+    void execute(List<Contact> contacts, List<Contact> searchedContacts) {
 
         console.displayStartSearching("bubble sort + jump search");
 
-        displayFoundContactsAfterSearching(contacts, searchContacts);
+        displayFoundContactsAfterSearching(contacts, searchedContacts);
 
     }
 

@@ -16,11 +16,11 @@ public class LinearSearchController extends ProcessingController {
     }
 
     @Override
-    void execute(List<Contact> contacts, List<Contact> searchContacts) {
+    void execute(List<Contact> contacts, List<Contact> searchedContacts) {
 
         console.displayStartSearching("linear search");
 
-        displayFoundContacts(contacts, searchContacts);
+        displayFoundContacts(contacts, searchedContacts);
 
         displaySearchingTime();
 

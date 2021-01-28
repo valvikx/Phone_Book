@@ -19,11 +19,11 @@ public class QuickSortAndBinarySearchController extends ProcessingController {
     }
 
     @Override
-    void execute(List<Contact> contacts, List<Contact> searchContacts) {
+    void execute(List<Contact> contacts, List<Contact> searchedContacts) {
 
         console.displayStartSearching("quick sort + binary search");
 
-        displayFoundContactsAfterSearching(contacts, searchContacts);
+        displayFoundContactsAfterSearching(contacts, searchedContacts);
 
     }
 
