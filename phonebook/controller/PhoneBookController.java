@@ -26,19 +26,21 @@ public class PhoneBookController {
 
             List<Contact> contacts = phoneBookIO.getData(DIRECTORY_PATH);
 
-            List<Contact> searchContacts = phoneBookIO.getData(FIND_PATH);
+            List<Contact> searchedContacts = phoneBookIO.getData(FIND_PATH);
 
-            new LinearSearchController(console).execute(contacts, searchContacts);
+            new LinearSearchController(console).execute(contacts, searchedContacts);
 
-            new BubbleSortAndJumpSearchController(console).execute(new ArrayList<>(contacts), searchContacts);
+            new BubbleSortAndJumpSearchController(console).execute(new ArrayList<>(contacts),
+                                                                   searchedContacts);
 
-            new QuickSortAndBinarySearchController(console).execute(new ArrayList<>(contacts), searchContacts);
+            new QuickSortAndBinarySearchController(console).execute(new ArrayList<>(contacts),
+                                                                    searchedContacts);
 
-            new HashTableController(console).execute(contacts, searchContacts);
+            new HashTableController(console).execute(contacts, searchedContacts);
 
         } catch (PhoneBookException e) {
 
-            console.displayMessage(e.getMessage());
+            console.display(e.getMessage());
 
         }
 

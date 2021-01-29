@@ -15,13 +15,13 @@ public abstract class ProcessingController {
 
     protected final Console console;
 
-    protected long sortingMillis;
-
     protected long searchingMillis;
 
     protected final Searching searching;
 
     private final Sorting sorting;
+
+    private long sortingMillis;
 
     protected List<Contact> foundContacts;
 

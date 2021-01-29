@@ -9,7 +9,7 @@ import java.util.List;
 public class BinarySearching implements ISearching {
 
     @Override
-    public int getIdx(List<Contact> contacts, Contact contact,
+    public int getIdx(List<Contact> contacts, Contact searchedContact,
                       Comparator<Contact> comparator) {
 
         int left = 0;
@@ -20,11 +20,11 @@ public class BinarySearching implements ISearching {
 
             int mid = left + (right - left) / 2;
 
-            if (comparator.compare(contacts.get(mid), contact) == 0) {
+            if (comparator.compare(contacts.get(mid), searchedContact) == 0) {
 
                 return mid;
 
-            } else if (comparator.compare(contacts.get(mid), contact) > 0) {
+            } else if (comparator.compare(contacts.get(mid), searchedContact) > 0) {
 
                 right = mid - 1;
 

@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ISearching {
 
-    int getIdx(List<Contact> contacts, Contact contact, Comparator<Contact> comparator);
+    int getIdx(List<Contact> contacts, Contact searchedContact,
+               Comparator<Contact> comparator);
 
 }

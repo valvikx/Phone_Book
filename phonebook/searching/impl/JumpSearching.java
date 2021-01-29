@@ -9,27 +9,27 @@ import java.util.List;
 public class JumpSearching implements ISearching {
 
     @Override
-    public int getIdx(List<Contact> contacts, Contact contact,
+    public int getIdx(List<Contact> contacts, Contact searchedContact,
                       Comparator<Contact> comparator) {
 
-        return getIdx(contacts, contact, comparator, 0);
+        return getIdx(contacts, searchedContact, comparator, 0);
 
     }
 
-    private int getIdx(List<Contact> contacts, Contact contact,
+    private int getIdx(List<Contact> contacts, Contact searchedContact,
                        Comparator<Contact> comparator, int startIdx) {
 
         int currentIdx = 0;
 
         int previousIdx = 0;
 
-        if (comparator.compare(contacts.get(contacts.size() - 1), contact) < 0) {
+        if (comparator.compare(contacts.get(contacts.size() - 1), searchedContact) < 0) {
 
             return -1;
 
         }
 
-        if (comparator.compare(contacts.get(currentIdx), contact) == 0) {
+        if (comparator.compare(contacts.get(currentIdx), searchedContact) == 0) {
 
             return startIdx;
 
@@ -45,8 +45,8 @@ public class JumpSearching implements ISearching {
 
             currentIdx = Math.min(contacts.size() - 1, currentIdx + jumpLength);
 
-            if (comparator.compare(contacts.get(currentIdx), contact) > 0 ||
-                    comparator.compare(contacts.get(currentIdx), contact) == 0) {
+            if (comparator.compare(contacts.get(currentIdx), searchedContact) > 0 ||
+                    comparator.compare(contacts.get(currentIdx), searchedContact) == 0) {
 
                 break;
 
@@ -58,7 +58,7 @@ public class JumpSearching implements ISearching {
 
         List<Contact> subContacts = contacts.subList(previousIdx + 1, currentIdx + 1);
 
-        return getIdx(subContacts, contact, comparator, startIdx + previousIdx + 1);
+        return getIdx(subContacts, searchedContact, comparator, startIdx + previousIdx + 1);
 
     }
 

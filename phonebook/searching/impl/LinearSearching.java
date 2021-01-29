@@ -9,12 +9,12 @@ import java.util.List;
 public class LinearSearching implements ISearching {
 
     @Override
-    public int getIdx(List<Contact> contacts, Contact contact,
+    public int getIdx(List<Contact> contacts, Contact searchedContact,
                       Comparator<Contact> comparator) {
 
         for (int i = 0; i < contacts.size(); i++) {
 
-            if (comparator.compare(contacts.get(i), contact) == 0) {
+            if (comparator.compare(contacts.get(i), searchedContact) == 0) {
 
                 return i;
 

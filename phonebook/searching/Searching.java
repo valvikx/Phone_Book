@@ -20,19 +20,17 @@ public class Searching {
     public List<Contact> apply(List<Contact> contacts, List<Contact> searchedContacts,
                                Comparator<Contact> comparator) {
 
-        return searchedContacts
-                .stream()
-                .filter(fc -> method.getIdx(contacts, fc, comparator) > -1)
-                .collect(Collectors.toList());
+        return searchedContacts.stream()
+                               .filter(fc -> method.getIdx(contacts, fc, comparator) > -1)
+                               .collect(Collectors.toList());
 
     }
 
     public List<Contact> apply(HashTable<Contact> contacts, List<Contact> searchedContacts) {
 
-        return searchedContacts
-                .stream()
-                .filter(fc -> contacts.get(Math.abs(fc.hashCode())) != null)
-                .collect(Collectors.toList());
+        return searchedContacts.stream()
+                               .filter(fc -> contacts.get(Math.abs(fc.hashCode())) != null)
+                               .collect(Collectors.toList());
 
     }
 

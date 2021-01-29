@@ -14,7 +14,7 @@ public class Console {
 
     private static final String SEARCHING_TIME = "Searching time: %d min. %d sec. %d ms.\n\r\n";
 
-    public void displayMessage(String template, Object... params) {
+    public void display(String template, Object... params) {
 
         System.out.printf(template, params);
 
@@ -22,37 +22,37 @@ public class Console {
 
     public void displayStartSearching(String method) {
 
-        displayMessage(START_SEARCHING, method);
+        display(START_SEARCHING, method);
 
     }
 
     public void displayFoundContacts(int foundContacts, int entries) {
 
-        displayMessage(FOUND_ENTRIES, foundContacts, entries);
+        display(FOUND_ENTRIES, foundContacts, entries);
 
     }
 
     public void displayElapsedTime(int minutes, int seconds, int millis) {
 
-        displayMessage(TIME_TAKEN, minutes, seconds, millis);
+        display(TIME_TAKEN, minutes, seconds, millis);
 
     }
 
     public void displaySortingTime(int minutes, int seconds, int millis) {
 
-        displayMessage(SORTING_TIME, minutes, seconds, millis);
+        display(SORTING_TIME, minutes, seconds, millis);
 
     }
 
     public void displayCreatingTime(int minutes, int seconds, int millis) {
 
-        displayMessage(CREATING_TIME, minutes, seconds, millis);
+        display(CREATING_TIME, minutes, seconds, millis);
 
     }
 
     public void displaySearchingTime(int minutes, int seconds, int millis) {
 
-        displayMessage(SEARCHING_TIME, minutes, seconds, millis);
+        display(SEARCHING_TIME, minutes, seconds, millis);
 
     }
 

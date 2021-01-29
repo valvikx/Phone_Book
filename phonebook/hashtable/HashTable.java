@@ -65,8 +65,7 @@ public class HashTable<V> {
 
         table = new Entry[size];
 
-        Arrays
-              .stream(oldTable)
+        Arrays.stream(oldTable)
               .forEach(entry -> put(entry.getKey(), entry.getValue()));
 
     }
