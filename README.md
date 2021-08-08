@@ -9,7 +9,7 @@ Java SE 16.0.2
 1. Linear search
 2. Jump search
 3. Binary search
-4. Buble sort
+4. Bubble sort
 5. Merge sort
 6. Quick sort
 7. Hash table implementing
