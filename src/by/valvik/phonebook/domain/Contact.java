@@ -8,7 +8,7 @@ public record Contact(int phoneNumber, String name) {
 
     public Contact(String name) {
 
-        this(0, name);
+        this(-1, name);
 
     }
 
