@@ -1,4 +1,4 @@
-package by.valvik.phonebook.controller;
+package by.valvik.phonebook.command;
 
 import by.valvik.phonebook.domain.Contact;
 import by.valvik.phonebook.searching.SearchingMethod;
@@ -10,11 +10,11 @@ import by.valvik.phonebook.view.Console;
 
 import java.util.List;
 
-public class BubbleSortAndJumpSearchController extends ProcessingController {
+public class BubbleSortAndJumpSearchCommand extends BaseCommand {
 
     private static final String BUBBLE_SORT_JUMP_SEARCH = "bubble sort + jump search";
 
-    public BubbleSortAndJumpSearchController(Timer timer, Console console) {
+    public BubbleSortAndJumpSearchCommand(Timer timer, Console console) {
 
         super(timer, console, new SearchingMethod(new JumpSearching()),
               // The bubble sorting is replaced with java library sorting!!!
@@ -26,9 +26,9 @@ public class BubbleSortAndJumpSearchController extends ProcessingController {
     @Override
     public void execute(List<Contact> contacts, List<Contact> searchedContacts) {
 
-        console.displayStartSearching(BUBBLE_SORT_JUMP_SEARCH);
+        getConsole().displayStartSearching(BUBBLE_SORT_JUMP_SEARCH);
 
-        displayFoundContactsAfterSearching(contacts, searchedContacts);
+        determineSortAndSearchDuration(contacts, searchedContacts);
 
     }
 

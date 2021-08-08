@@ -2,6 +2,8 @@ package by.valvik.phonebook.domain;
 
 import java.util.Objects;
 
+import static java.lang.Math.abs;
+
 public record Contact(int phoneNumber, String name) {
 
     public Contact(String name) {
@@ -24,7 +26,7 @@ public record Contact(int phoneNumber, String name) {
     @Override
     public int hashCode() {
 
-        return Objects.hash(name);
+        return abs(Objects.hash(name));
 
     }
 

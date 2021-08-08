@@ -17,27 +17,9 @@ public class Timer {
 
     }
 
-    public void finish() {
+    public Duration finish() {
 
-        duration = ofMillis(currentTimeMillis() - startTime);
-
-    }
-
-    public long toMillis() {
-
-        return duration.toMillis();
-
-    }
-
-    public void setNewDuration(long millis) {
-
-        duration = ofMillis(millis);
-
-    }
-
-    public void sumMillis(long first, long second) {
-
-        duration = ofMillis(first + second);
+        return ofMillis(currentTimeMillis() - startTime);
 
     }
 
@@ -56,6 +38,18 @@ public class Timer {
     public int getMillis() {
 
         return duration.toMillisPart();
+
+    }
+
+    public int getNanos() {
+
+        return duration.toNanosPart();
+
+    }
+
+    public void setDuration(Duration duration) {
+
+        this.duration = duration;
 
     }
 

@@ -1,8 +1,8 @@
-package by.valvik.phonebook.io.impl;
+package by.valvik.phonebook.dao.impl;
 
 import by.valvik.phonebook.domain.Contact;
 import by.valvik.phonebook.exception.AppException;
-import by.valvik.phonebook.io.FileIO;
+import by.valvik.phonebook.dao.Dao;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,9 +14,9 @@ import java.util.Scanner;
 import static java.lang.Character.isDigit;
 import static java.lang.Integer.parseInt;
 
-public class RemoteFileIO implements FileIO {
+public class RemoteDao implements Dao {
 
-    private static final String ERROR_LOAD = "Cannot load data file from %s";
+    private static final String ERROR_LOAD = "Cannot download data file from %s";
 
     private static final String REGEX = "\\s+";
 
@@ -24,9 +24,9 @@ public class RemoteFileIO implements FileIO {
 
     public List<Contact> getData(String filePath) throws AppException {
 
-        try {
+        List<Contact> contacts = new ArrayList<>();
 
-            List<Contact> contacts = new ArrayList<>();
+        try {
 
             URL url = new URL(filePath);
 

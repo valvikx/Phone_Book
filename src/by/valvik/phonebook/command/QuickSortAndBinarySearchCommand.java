@@ -1,4 +1,4 @@
-package by.valvik.phonebook.controller;
+package by.valvik.phonebook.command;
 
 import by.valvik.phonebook.domain.Contact;
 import by.valvik.phonebook.searching.SearchingMethod;
@@ -10,11 +10,11 @@ import by.valvik.phonebook.view.Console;
 
 import java.util.List;
 
-public class QuickSortAndBinarySearchController extends ProcessingController {
+public class QuickSortAndBinarySearchCommand extends BaseCommand {
 
     private static final String QUICK_SORT_BINARY_SEARCH = "quick sort + binary search";
 
-    public QuickSortAndBinarySearchController(Timer timer, Console console) {
+    public QuickSortAndBinarySearchCommand(Timer timer, Console console) {
 
         super(timer, console, new SearchingMethod(new BinarySearching()),
               new SortingMethod(new QuickSorting()));
@@ -24,9 +24,9 @@ public class QuickSortAndBinarySearchController extends ProcessingController {
     @Override
     public void execute(List<Contact> contacts, List<Contact> searchedContacts) {
 
-        console.displayStartSearching(QUICK_SORT_BINARY_SEARCH);
+        getConsole().displayStartSearching(QUICK_SORT_BINARY_SEARCH);
 
-        displayFoundContactsAfterSearching(contacts, searchedContacts);
+        determineSortAndSearchDuration(contacts, searchedContacts);
 
     }
 

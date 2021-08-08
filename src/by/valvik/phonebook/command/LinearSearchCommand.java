@@ -1,4 +1,4 @@
-package by.valvik.phonebook.controller;
+package by.valvik.phonebook.command;
 
 import by.valvik.phonebook.domain.Contact;
 import by.valvik.phonebook.searching.SearchingMethod;
@@ -8,11 +8,11 @@ import by.valvik.phonebook.view.Console;
 
 import java.util.List;
 
-public class LinearSearchController extends ProcessingController {
+public class LinearSearchCommand extends BaseCommand {
 
     private static final String LINEAR_SEARCH = "linear search";
 
-    public LinearSearchController(Timer timer, Console console) {
+    public LinearSearchCommand(Timer timer, Console console) {
 
         super(timer, console, new SearchingMethod(new LinearSearching()));
 
@@ -21,11 +21,9 @@ public class LinearSearchController extends ProcessingController {
     @Override
     public void execute(List<Contact> contacts, List<Contact> searchedContacts) {
 
-        console.displayStartSearching(LINEAR_SEARCH);
+        getConsole().displayStartSearching(LINEAR_SEARCH);
 
-        displayFoundContacts(contacts, searchedContacts);
-
-        displaySearchingTime();
+        getSearchDuration(contacts, searchedContacts);
 
     }
 
