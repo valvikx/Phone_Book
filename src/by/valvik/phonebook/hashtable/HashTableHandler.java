@@ -4,8 +4,6 @@ import by.valvik.phonebook.domain.Contact;
 
 import java.util.List;
 
-import static java.lang.Math.abs;
-
 public class HashTableHandler {
 
     private final HashTable<Contact> hashTable ;
@@ -18,7 +16,7 @@ public class HashTableHandler {
 
     public void fillHashTable(List<Contact> contacts) {
 
-        contacts.forEach(contact -> hashTable.put(abs(contact.hashCode()), contact));
+        contacts.forEach(contact -> hashTable.put(contact.hashCode(), contact));
 
     }
 

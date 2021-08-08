@@ -12,7 +12,7 @@ import java.util.List;
 
 public class BubbleSortAndJumpSearchCommand extends BaseCommand {
 
-    private static final String BUBBLE_SORT_JUMP_SEARCH = "bubble sort + jump search";
+    private static final String BUBBLE_SORT_JUMP_SEARCH = "BUBBLE SORT + JUMP SEARCH";
 
     public BubbleSortAndJumpSearchCommand(Timer timer, Console console) {
 
@@ -29,6 +29,8 @@ public class BubbleSortAndJumpSearchCommand extends BaseCommand {
         getConsole().displayStartSearching(BUBBLE_SORT_JUMP_SEARCH);
 
         determineSortAndSearchDuration(contacts, searchedContacts);
+
+        getConsole().displayEmptyLine();
 
     }
 

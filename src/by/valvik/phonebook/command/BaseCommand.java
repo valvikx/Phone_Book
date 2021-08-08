@@ -13,9 +13,9 @@ import static java.util.Comparator.comparing;
 
 public abstract class BaseCommand {
 
-    private static final String FOUND_ENTRIES = "Found %d / %d entries. ";
+    private static final String FOUND_ENTRIES = "Found %d of %d entries.\n";
 
-    private static final String TIME_TEMPLATE = "%s %d min. %d sec. %d ms. %d ns\n";
+    private static final String TIME_TEMPLATE = "%s %d min. %d sec. %d ms. %d ns.\n";
 
     private static final String SEARCHING_TIME = "Searching time:";
 

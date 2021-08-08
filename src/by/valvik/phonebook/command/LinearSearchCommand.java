@@ -10,7 +10,7 @@ import java.util.List;
 
 public class LinearSearchCommand extends BaseCommand {
 
-    private static final String LINEAR_SEARCH = "linear search";
+    private static final String LINEAR_SEARCH = "LINEAR SEARCH";
 
     public LinearSearchCommand(Timer timer, Console console) {
 
@@ -24,6 +24,8 @@ public class LinearSearchCommand extends BaseCommand {
         getConsole().displayStartSearching(LINEAR_SEARCH);
 
         getSearchDuration(contacts, searchedContacts);
+
+        getConsole().displayEmptyLine();
 
     }
 

@@ -12,7 +12,7 @@ import java.util.List;
 
 public class HashTableSearchCommand extends BaseCommand {
 
-    private static final String HASH_TABLE = "hash table";
+    private static final String HASH_TABLE = "HASH TABLE";
 
     private static final String CREATING_TIME = "Creating time:";
 
@@ -41,6 +41,8 @@ public class HashTableSearchCommand extends BaseCommand {
         Duration totalDuration = fillDuration.plus(searchDuration);
 
         determineElapsedTime(totalDuration, TIME_TAKEN);
+
+        getConsole().displayEmptyLine();
 
     }
 

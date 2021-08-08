@@ -10,6 +10,12 @@ public class Console {
 
     }
 
+    public void displayEmptyLine() {
+
+        System.out.println();
+
+    }
+
     public void displayStartSearching(String method) {
 
         display(START_SEARCHING, method);

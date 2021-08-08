@@ -15,15 +15,15 @@ public class DataCommand {
     private static final String FIND_URL = "https://stepik.org/media/attachments/lesson/197761/find.txt";
 
     private static final String PHONE_BOOK = """
-        ************************** Phone book ************************************\n
-        *** Application for testing a variety of sorting and search algorithms ***\n       
+        ************************** Phone book ************************************
+        *** Application for testing a variety of sorting and search algorithms ***      
         Please wait until the test files are downloaded...\n
         """;
 
     private static final String TEST_FILES_DOWNLOADED = """
-        Download process is complete.\n
-        >>List of %d contacts has been created.\n                   
-        >>List of %d searched contacts has been created.\n\r\n
+        Download process is complete.
+        >>List of %d contacts has been created.                 
+        >>List of %d searched contacts has been created.\n
         """;
 
     private final Dao dao;

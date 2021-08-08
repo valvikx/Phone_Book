@@ -12,7 +12,7 @@ import java.util.List;
 
 public class QuickSortAndBinarySearchCommand extends BaseCommand {
 
-    private static final String QUICK_SORT_BINARY_SEARCH = "quick sort + binary search";
+    private static final String QUICK_SORT_BINARY_SEARCH = "QUICK SORT + BINARY SEARCH";
 
     public QuickSortAndBinarySearchCommand(Timer timer, Console console) {
 
@@ -27,6 +27,8 @@ public class QuickSortAndBinarySearchCommand extends BaseCommand {
         getConsole().displayStartSearching(QUICK_SORT_BINARY_SEARCH);
 
         determineSortAndSearchDuration(contacts, searchedContacts);
+
+        getConsole().displayEmptyLine();
 
     }
 
