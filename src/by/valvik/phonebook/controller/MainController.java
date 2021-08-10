@@ -32,7 +32,7 @@ public class MainController {
 
             new LinearSearchCommand(timer, console).execute(contacts, searchedContacts);
 
-            new BubbleSortAndJumpSearchCommand(timer, console).execute(new ArrayList<>(contacts), searchedContacts);
+            new MergeSortAndJumpSearchCommand(timer, console).execute(new ArrayList<>(contacts), searchedContacts);
 
             new QuickSortAndBinarySearchCommand(timer, console).execute(new ArrayList<>(contacts), searchedContacts);
 
