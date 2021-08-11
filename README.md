@@ -12,4 +12,7 @@ Java SE 16.0.2
 4. Bubble sort
 5. Merge sort
 6. Quick sort
-7. Custom Hash Table 
+7. Custom Hash Table  
+## Implemented Patterns
+1. Strategy
+2. Adapter
