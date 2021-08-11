@@ -16,7 +16,8 @@ public class DataCommand {
 
     private static final String PHONE_BOOK = """
         ************************** Phone book ************************************
-        *** Application for testing a variety of sorting and search algorithms ***      
+        *** Application for testing a variety of sorting and search algorithms ***
+        **************************************************************************      
         Please wait until the test files are downloaded...\n
         """;
 
